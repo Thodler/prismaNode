@@ -3,7 +3,19 @@ import * as commandeService from "../service/commandeService"
 
 export const getAllCommandes = async (req: Request, res: Response) => {
     try {
-        const commande = await commandeService.getAllCommandes()
+        const commandes = await commandeService.getAllCommandes()
+        res.status(200).json(commandes)
+    } catch (e) {
+        res.status(500).json({
+            message: "Une erreur c'est produite."
+        })
+    }
+}
+
+
+export const getCommandeById = async (req: Request, res: Response) => {
+    try {
+        const commande = await commandeService.getCommandeById(req.params.id)
         res.status(200).json(commande)
     } catch (e) {
         res.status(500).json({

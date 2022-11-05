@@ -6,7 +6,7 @@ const router = Router()
 router.get('/', commandeCtrl.getAllCommandes)
 router.post('/', commandeCtrl.createCommande)
 
-//TODO: Récupérer une comamnde par son id
+router.get('/:id', commandeCtrl.getCommandeById)
 router.delete('/:id', commandeCtrl.deleteCommande)
 
 export default router
