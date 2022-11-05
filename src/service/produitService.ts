@@ -18,6 +18,20 @@ export const createProduit = (data: Produit) => {
         data: data
     })
 }
-// TODO: CRUD
-//  - Modifier un produit
-//  - Supprimer un produit par son id
+
+export const updateProduit = (id: string, data: Produit) => {
+    return prisma.produit.update({
+        where:{
+            id: parseInt(id)
+        },
+        data: data
+    })
+}
+
+export const deleteProduit = (id: string) => {
+    return prisma.produit.delete({
+        where:{
+            id: parseInt(id)
+        }
+    })
+}

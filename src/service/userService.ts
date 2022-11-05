@@ -8,6 +8,10 @@ export const getAllUsers = () => {
     return prisma.user.findMany();
 }
 
+/**
+ * Récupère un utilisateur par son id
+ * @param id
+ */
 export const getUserById = (id: string) => {
     return prisma.user.findUnique({
         where:{
